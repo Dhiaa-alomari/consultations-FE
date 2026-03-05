@@ -32,14 +32,14 @@ async function handleLogout() {
         console.error('Logout error:', error);
     } finally {
         localStorage.clear();
-        window.location.href = '/index.html';
+        window.location.href = 'index.html';
     }
 }
 
 // Protect page (redirect if not logged in)
 function protectPage() {
     if (!isLoggedIn()) {
-        window.location.href = '/login.html';
+        window.location.href = 'login.html';
     }
 }
 
