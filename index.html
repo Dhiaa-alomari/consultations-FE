@@ -11,7 +11,10 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">⚖️ Consultations</div>
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="logo">
+                    <a href="index.html">Consultations</a>
+                </div>
                 <div class="nav-menu" id="navMenu">
                     <a href="index.html">Home</a>
                     <a href="#services">Services</a>
@@ -55,6 +58,10 @@
     <section id="booking" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Book Your Consultation</h2>
+            <p class="section-desc">Consultations are conducted via
+                <span>Microsoft Zoom</span> 
+                for your convenience. Please ensure the app is installed on your device at the time of the consultation
+            </p>
             <div class="booking-card">
                 <form id="bookingForm" onsubmit="handleBooking(event)">
                     <div class="form-group">
@@ -73,9 +80,6 @@
                         <div class="form-group">
                             <label>Time *</label>
                             <input type="time" id="bookingTime" required onchange="checkAvailability()">
-                            <!-- <select id="bookingTime" required disabled>
-                                <option value="">Select date first</option>
-                            </select> -->
                         </div>
                     </div>
 

@@ -25,6 +25,11 @@ body {
     color: var(--text);
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -51,6 +56,18 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+}
+
+.logo img {
+    max-width: 100%;
+    width: 40px;
+    filter: drop-shadow(1px 1px 0px blue);
 }
 
 .nav-menu {
@@ -116,8 +133,6 @@ body {
 /* Hero */
 .hero {
     height: 500px;
-    /* background: linear-gradient(135deg, rgba(30,64,175,0.9), rgba(30,58,138,0.9)),
-                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200'); */
     background: linear-gradient(135deg, rgba(30,64,175,0.9), rgba(30,58,138,0.9)),
                 url('https://res.cloudinary.com/difbekaco/image/upload/v1772676433/hero-background_maxhfm.jpg');
     background-size: cover;
@@ -152,6 +167,7 @@ body {
     border: none;
     border-radius: 5px;
     font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
@@ -228,6 +244,12 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.section-desc span {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -241,6 +263,7 @@ body {
 .form-group input,
 .form-group select,
 .form-group textarea {
+    max-width: 100%;
     width: 100%;
     padding: 0.75rem;
     border: 2px solid var(--border);
@@ -519,3 +542,4 @@ body {
     }
     .nav-menu.active { left: 0; }
 }
+
