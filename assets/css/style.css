@@ -101,6 +101,10 @@ body {
     font-weight: 600;
 }
 
+#navUser a {
+    line-height: 30px;
+}
+
 .mobile-btn {
     display: none;
     background: none;
