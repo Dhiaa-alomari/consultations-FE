@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Consultations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">⚖️ Consultations</a>
+                <div class="nav-menu">
+                    <a href="index.html">Home</a>
+                    <a href="profile.html">Profile</a>
+                    <button onclick="handleLogout()" class="btn-logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="avatar-upload">
+                <img id="avatarImg" class="avatar-img" src="https://ui-avatars.com/api/?name=User&size=150" alt="Avatar">
+                <label class="avatar-input" for="avatarInput">📷</label>
+                <input type="file" id="avatarInput" accept="image/*" style="display:none;">
+            </div>
+            <h2 id="userName">Loading...</h2>
+            <p id="userEmail"></p>
+        </div>
+
+        <div class="auth-card">
+            <h3>Update Profile</h3>
+            <form id="profileForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="last_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label>Bio</label>
+                    <textarea id="bio" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Update Profile</button>
+            </form>
+        </div>
+
+        <div class="auth-card" style="margin-top:2rem;">
+            <h3>Change Password</h3>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label>Current Password *</label>
+                    <input type="password" id="old_password" required>
+                </div>
+                <div class="form-group">
+                    <label>New Password *</label>
+                    <input type="password" id="new_password" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password *</label>
+                    <input type="password" id="confirm_password" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Change Password</button>
+            </form>
+        </div>
+
+        <div class="appointments-table" style="margin-top:2rem;">
+            <h3 style="padding:1rem;">My Appointments</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Service</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentsBody">
+                    <tr><td colspan="6" style="text-align:center;">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <div id="loader" class="loader" style="display:none;"><div class="spinner"></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/config.js?v=2"></script>
+    <script src="js/utils.js?v=2"></script>
+    <script src="js/auth.js?v=2"></script>
+    <script>
+        protectPage();
+
+        async function loadProfile() {
+            try {
+                const response = await axios.get(API.profile);
+                const user = response.data;
+                
+                document.getElementById('userName').textContent = user.username;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('first_name').value = user.first_name || '';
+                document.getElementById('last_name').value = user.last_name || '';
+                document.getElementById('phone').value = user.phone || '';
+                document.getElementById('bio').value = user.bio || '';
+                
+                if (user.avatar) {
+                    document.getElementById('avatarImg').src = user.avatar;
+                }
+            } catch (error) {
+                showToast('Failed to load profile', 'error');
+            }
+        }
+
+        async function loadAppointments() {
+            try {
+                const response = await axios.get(API.myAppointments);
+                const appointments = response.data.results || response.data;
+                
+                const tbody = document.getElementById('appointmentsBody');
+                if (appointments.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;">No appointments yet</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = appointments.map(appt => `
+                    <tr>
+                        <td>${formatDate(appt.date)}</td>
+                        <td>${formatTime(appt.time)}</td>
+                        <td>${appt.category_name}</td>
+                        <td>${appt.duration} min</td>
+                        <td>$${appt.total_price}</td>
+                        <td><span class="badge ${appt.is_paid ? 'badge-success' : 'badge-warning'}">
+                            ${appt.is_paid ? 'Paid' : 'Pending'}
+                        </span></td>
+                    </tr>
+                `).join('');
+            } catch (error) {
+                showToast('Failed to load appointments', 'error');
+            }
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                first_name: document.getElementById('first_name').value,
+                last_name: document.getElementById('last_name').value,
+                phone: document.getElementById('phone').value,
+                bio: document.getElementById('bio').value
+            };
+            
+            showLoader();
+            try {
+                await axios.patch(API.profile, data);
+                hideLoader();
+                showToast('Profile updated!');
+            } catch (error) {
+                hideLoader();
+                showToast('Update failed', 'error');
+            }
+        });
+
+        document.getElementById('passwordForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const newPass = document.getElementById('new_password').value;
+            const confirm = document.getElementById('confirm_password').value;
+            
+            if (newPass !== confirm) {
+                showToast('Passwords do not match', 'error');
+                return;
+            }
+            
+            const data = {
+                old_password: document.getElementById('old_password').value,
+                new_password: newPass,
+                confirm_password: confirm
+            };
+            
+            showLoader();
+            try {
+                await axios.post(API.changePassword, data);
+                hideLoader();
+                showToast('Password changed!');
+                e.target.reset();
+            } catch (error) {
+                hideLoader();
+                const msg = error.response?.data?.error || 'Password change failed';
+                showToast(msg, 'error');
+            }
+        });
+
+        document.getElementById('avatarInput').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const formData = new FormData();
+            formData.append('avatar', file);
+            
+            showLoader();
+            try {
+                await axios.patch(API.profile, formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                });
+                hideLoader();
+                showToast('Avatar updated!');
+                loadProfile();
+            } catch (error) {
+                hideLoader();
+                showToast('Upload failed', 'error');
+            }
+        });
+
+        loadProfile();
+        loadAppointments();
+    </script>
+</body>
+</html>
