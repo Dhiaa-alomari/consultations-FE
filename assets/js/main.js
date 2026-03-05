@@ -164,6 +164,7 @@ function populateTimeSlots() {
     timeSelect.disabled = false;
 }
 
+
 // Update total price
 function updateTotal() {
     const duration = document.getElementById('duration').value;
@@ -177,7 +178,9 @@ function updateTotal() {
     }
     
     if (selectedCategory && duration) {
-        const total = (selectedCategory.price_per_15min / 15) * duration;
+        // Simple fix: multiply first, then divide
+        const total = (selectedCategory.price_per_15min * duration) / 15;
+        
         totalAmount.textContent = total.toFixed(2);
         totalBox.style.display = 'block';
     } else {
