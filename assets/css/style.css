@@ -116,8 +116,10 @@ body {
 /* Hero */
 .hero {
     height: 500px;
+    /* background: linear-gradient(135deg, rgba(30,64,175,0.9), rgba(30,58,138,0.9)),
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200'); */
     background: linear-gradient(135deg, rgba(30,64,175,0.9), rgba(30,58,138,0.9)),
-                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200');
+                url('https://res.cloudinary.com/difbekaco/image/upload/v1772676433/hero-background_maxhfm.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
