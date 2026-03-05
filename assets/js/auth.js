@@ -39,7 +39,7 @@ async function handleLogout() {
 // Protect page (redirect if not logged in)
 function protectPage() {
     if (!isLoggedIn()) {
-        window.location.href = '/pages/login.html';
+        window.location.href = '/login.html';
     }
 }
 

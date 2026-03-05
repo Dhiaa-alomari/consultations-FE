@@ -73,7 +73,7 @@ axios.interceptors.response.use(
             localStorage.removeItem('access_token');
             localStorage.removeItem('refresh_token');
             localStorage.removeItem('user');
-            window.location.href = '/pages/login.html';
+            window.location.href = '/login.html';
         }
         return Promise.reject(error);
     }
