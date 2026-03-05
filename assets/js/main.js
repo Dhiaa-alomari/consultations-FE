@@ -217,7 +217,7 @@ async function handleBooking(event) {
         
         // Redirect to payment
         setTimeout(() => {
-            window.location.href = '/payment.html';
+            window.location.href = 'payment.html';
         }, 1000);
     } catch (error) {
         hideLoader();
