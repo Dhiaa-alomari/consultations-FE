@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Consultations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">⚖️ Consultations</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <div class="container">
+            <div class="auth-card">
+                <h2 style="text-align:center; margin-bottom:2rem;">Create Account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>Username *</label>
+                        <input type="text" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" id="password" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password *</label>
+                        <input type="password" id="password_confirm" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-block">Register</button>
+                </form>
+
+                <p style="text-align:center; margin-top:1rem;">
+                    Already have an account? <a href="login.html">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/config.js?v=2"></script>
+    <script src="js/utils.js?v=2"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('password_confirm').value;
+            
+            if (password !== confirm) {
+                showToast('Passwords do not match', 'error');
+                return;
+            }
+            
+            const data = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password,
+                password_confirm: confirm
+            };
+            
+            showLoader();
+            try {
+                const response = await axios.post(API.register, data);
+                localStorage.setItem('access_token', response.data.tokens.access);
+                localStorage.setItem('refresh_token', response.data.tokens.refresh);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+                
+                hideLoader();
+                showToast('Registration successful!');
+                setTimeout(() => window.location.href = 'index.html', 1000);
+            } catch (error) {
+                hideLoader();
+                const errors = error.response?.data;
+                const msg = errors?.error || errors?.username?.[0] || errors?.email?.[0] || 'Registration failed';
+                showToast(msg, 'error');
+            }
+        });
+    </script>
+</body>
+</html>

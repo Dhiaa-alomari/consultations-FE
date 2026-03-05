@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Consultations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">⚖️ Consultations</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <div class="container">
+            <div class="auth-card">
+                <h2 style="text-align:center; margin-bottom:2rem;">Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Username or Email *</label>
+                        <input type="text" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-block">Login</button>
+                </form>
+
+                <p style="text-align:center; margin-top:1rem;">
+                    Don't have an account? <a href="register.html">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/config.js?v=2"></script>
+    <script src="js/utils.js?v=2"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const data = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+            
+            showLoader();
+            try {
+                const response = await axios.post(API.login, data);
+                localStorage.setItem('access_token', response.data.tokens.access);
+                localStorage.setItem('refresh_token', response.data.tokens.refresh);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+                
+                hideLoader();
+                showToast('Login successful!');
+                setTimeout(() => window.location.href = 'index.html', 1000);
+            } catch (error) {
+                hideLoader();
+                const msg = error.response?.data?.error || 'Login failed';
+                showToast(msg, 'error');
+            }
+        });
+    </script>
+</body>
+</html>
