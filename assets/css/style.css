@@ -257,7 +257,7 @@ a {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.section-desc span {
+.section-desc a {
     color: var(--primary);
     font-weight: 600;
     text-decoration: underline;
