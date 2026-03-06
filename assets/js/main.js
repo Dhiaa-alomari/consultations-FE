@@ -3,7 +3,7 @@ let categories = [];
 let selectedCategory = null;
 let bookedTimes = [];
 
-//when user clicks on cart, check if they are logged in and if they have items in cart
+//when user clicks on cart, check if they are logged in and if there items in cart
 document.getElementById('cartBtn').addEventListener('click', async function (event) {
     showLoader();
     if (!isLoggedIn()) {

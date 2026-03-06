@@ -88,20 +88,22 @@ a {
 
 .nav-auth, .nav-user {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
 .btn-login, .btn-register {
     padding: 0.3rem 1.5rem;
+    border: 2px solid var(--primary);
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
+    text-box-trim: trim-start;
 }
 
 #navAuth .btn-login {
     color: var(--primary);
-    border: 2px solid var(--primary);
 }
 
 #navAuth .btn-register {
@@ -119,6 +121,7 @@ a {
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 1px;
+    text-box-trim: trim-start;
 }
 
 .btn-login:hover, 
@@ -248,7 +251,9 @@ a {
 }
 
 /* Forms */
-.booking-card, .contact-card, .auth-card {
+.booking-card, 
+.contact-card, 
+.auth-card {
     max-width: 600px;
     margin: 0 auto;
     background: white;
