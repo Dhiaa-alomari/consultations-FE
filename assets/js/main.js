@@ -10,8 +10,7 @@ document.getElementById('cartBtn').addEventListener('click', async function (eve
         showToast('Please login to view your cart', 'error');
         return;
     }
-    // Optionally, you can also check if the cart is empty before redirecting
-    // This requires an API call to check cart contents, which can be added here if desired
+    // check if cart has no items before redirecting to cart page
     const response = await axios.get(API.cart);
     const cart = response.data;
     
