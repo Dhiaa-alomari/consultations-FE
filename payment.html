@@ -64,11 +64,19 @@
                     window.location.href = 'index.html';
                     return;
                 }
-                
+
                 document.getElementById('cartItems').innerHTML = cart.items.map(item => `
-                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0;">
+                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0;" data-item-id="${item.id}">
                         <span>${item.category_name} - ${item.duration}min</span>
-                        <strong>$${item.computed_price}</strong>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <strong>$${item.computed_price}</strong>
+                            <button 
+                                onclick="removeFromCart(${item.id})" 
+                                style="margin-left:1rem; color:var(--danger); border:none; background:none; cursor:pointer;
+                                font-size:1.3rem; font-weight:bolder;">
+                                &times;
+                            </button>
+                        </div>
                     </div>
                 `).join('');
                 
@@ -79,6 +87,18 @@
             } catch (error) {
                 showToast('Failed to load cart', 'error');
             }
+        }
+
+        async function removeFromCart(itemId) {
+            showLoader();
+            try {
+                await axios.delete(`${API.cart}items/${itemId}`);
+                showToast('Removed from cart successfully!');
+                await loadCart();
+            } catch (error) {
+                showToast('Failed to remove item from cart', 'error');
+            }
+            hideLoader();
         }
 
         async function handlePayment() {

@@ -88,7 +88,7 @@ a {
 
 .nav-auth, .nav-user {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .btn-login, .btn-register {
@@ -539,6 +539,12 @@ a {
         padding: 2rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transition: left 0.3s;
+    }
+    #navUser {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .nav-menu.active { left: 0; }
 }

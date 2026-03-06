@@ -117,11 +117,11 @@
                 document.getElementById('userEmail').textContent = user.email;
                 document.getElementById('first_name').value = user.first_name || '';
                 document.getElementById('last_name').value = user.last_name || '';
-                document.getElementById('phone').value = user.phone || '';
-                document.getElementById('bio').value = user.bio || '';
+                document.getElementById('phone').value = user.profile.phone || '';
+                document.getElementById('bio').value = user.profile.bio || '';
                 
-                if (user.avatar) {
-                    document.getElementById('avatarImg').src = user.avatar;
+                if (user.profile.avatar_url) {
+                    document.getElementById('avatarImg').src = user.profile.avatar_url;
                 }
             } catch (error) {
                 showToast('Failed to load profile', 'error');

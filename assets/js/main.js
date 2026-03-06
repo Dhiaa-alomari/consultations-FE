@@ -3,6 +3,29 @@ let categories = [];
 let selectedCategory = null;
 let bookedTimes = [];
 
+//when user clicks on cart, check if they are logged in and if they have items in cart
+document.getElementById('cartBtn').addEventListener('click', async function (event) {
+    showLoader();
+    if (!isLoggedIn()) {
+        showToast('Please login to view your cart', 'error');
+        return;
+    }
+    // Optionally, you can also check if the cart is empty before redirecting
+    // This requires an API call to check cart contents, which can be added here if desired
+    const response = await axios.get(API.cart);
+    const cart = response.data;
+    
+    if (!cart.items || cart.items.length === 0) {
+        event.preventDefault(); // Disable link
+        showToast('Your cart is empty');
+        hideLoader();
+        return;
+    } else {
+        // Redirect to cart page
+        window.location.href = 'payment.html';
+    } 
+});
+
 // Load categories
 async function loadCategories() {
     try {
@@ -167,6 +190,7 @@ function populateTimeSlots() {
 
 // Update total price
 function updateTotal() {
+    console.log("Updating total function...")
     const duration = document.getElementById('duration').value;
     const totalBox = document.getElementById('totalBox');
     const totalAmount = document.getElementById('totalAmount');
@@ -176,11 +200,9 @@ function updateTotal() {
         totalBox.style.display = 'none';
         return;
     }
-    
+
     if (selectedCategory && duration) {
-        // Simple fix: multiply first, then divide
         const total = (selectedCategory.price_per_15min * duration) / 15;
-        
         totalAmount.textContent = total.toFixed(2);
         totalBox.style.display = 'block';
     } else {
