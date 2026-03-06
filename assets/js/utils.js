@@ -20,6 +20,18 @@ function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
 }
 
+// Hide mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const navMenu = document.getElementById('navMenu');
+    const mobileBtn = document.querySelector('.mobile-btn');
+
+    if (navMenu.classList.contains('active') 
+        && !navMenu.contains(event.target) 
+        && !mobileBtn.contains(event.target)) {
+        navMenu.classList.remove('active');
+    }
+})
+
 // Format date
 function formatDate(dateStr) {
     return new Date(dateStr).toLocaleDateString('en-US', {
