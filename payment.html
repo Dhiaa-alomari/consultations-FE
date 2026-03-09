@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://js.stripe.com https://m.stripe.network https://cdn.jsdelivr.net;
+        connect-src 'self' https://api.stripe.com https://m.stripe.network https://consultations-be-795aeca2a205.herokuapp.com https://cdn.jsdelivr.net;
+        worker-src 'self' blob: https://m.stripe.network;
+        frame-src https://js.stripe.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+    ">
     <meta name="description" content="Book professional legal consultations online with expert lawyers in all legal fields. Affordable rates, convenient Zoom sessions, and trusted advice for individuals and businesses.">
     <meta name="keywords" content="legal consultations, online lawyer, legal advice, affordable legal services, book legal consultation, family law, immigration law, commercial law, corporate legal advice, virtual legal consultation">
     <!-- Favicon -->
