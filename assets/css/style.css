@@ -563,12 +563,12 @@ a {
 
 .edit-btn {
     color: var(--success);
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .delete-btn {
     color: var(--danger);
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .btn-left {
