@@ -25,10 +25,12 @@ document.addEventListener('click', function(event) {
     const navMenu = document.getElementById('navMenu');
     const mobileBtn = document.querySelector('.mobile-btn');
 
-    if (navMenu.classList.contains('active') 
-        && !navMenu.contains(event.target) 
-        && !mobileBtn.contains(event.target)) {
-        navMenu.classList.remove('active');
+    if (navMenu) {
+        if (navMenu.classList.contains('active') 
+            && !navMenu.contains(event.target) 
+            && !mobileBtn.contains(event.target)) {
+            navMenu.classList.remove('active');
+        }
     }
 })
 

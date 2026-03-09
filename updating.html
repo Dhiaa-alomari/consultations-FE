@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultations - Legal Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="logo">
+                    <a href="index.html">Consultations</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking -->
+    <section id="booking" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Update Your Consultation</h2>
+            <div class="booking-card">
+                <button onclick="window.location.href='payment.html'" class="customize-btn delete-btn btn-left">
+                    &times;
+                </button>
+                <form id="bookingForm" onsubmit="updateBooking(event)">
+                    <div class="form-group">
+                        <label>Consultation Type *</label>
+                        <select id="consultationType" required="" onchange="updatePrice()">
+                            <option value="">Select service...</option>
+                            <option value="6" data-price="35.00">Commercial Law - $35.00/15min</option>
+                            <option value="9" data-price="45.00">Contracts - $45.00/15min</option>
+                            <option value="5" data-price="30.00">Family Law - $30.00/15min</option>
+                            <option value="1" data-price="50.00">Felonies - $50.00/15min</option>
+                            <option value="3" data-price="45.00">Immigration - $45.00/15min</option>
+                            <option value="10" data-price="50.00">Intellectual Property - $50.00/15min</option>
+                            <option value="7" data-price="30.00">Labor Law - $30.00/15min</option>
+                            <option value="2" data-price="40.00">Misdemeanors - $40.00/15min</option>
+                            <option value="4" data-price="60.00">Property Management - $60.00/15min</option>
+                            <option value="8" data-price="30.00">Tax Consulting - $30.00/15min</option>
+                        </select>
+                        <span class="price-display" id="priceDisplay"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date *</label>
+                            <input type="date" id="bookingDate" required onchange="checkAvailability()">
+                        </div>
+                        <div class="form-group">
+                            <label>Time *</label>
+                            <input type="time" id="bookingTime" required onchange="checkAvailability()">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duration *</label>
+                        <select id="duration" required onchange="updateTotal()">
+                            <option value="">Select duration...</option>
+                            <option value="15">15 minutes</option>
+                            <option value="30">30 minutes</option>
+                            <option value="60">1 hour</option>
+                            <option value="120">2 hours</option>
+                        </select>
+                    </div>
+
+                    <div class="total-box" id="totalBox" style="display:none;">
+                        <span>Total:</span>
+                        <strong>$<span id="totalAmount">0.00</span></strong>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-block">Done</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Loading -->
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/config.js?v=2"></script>
+    <script src="assets/js/utils.js?v=2"></script>
+    <script src="assets/js/auth.js?v=2"></script>
+    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/updating.js"></script>   
+</body>
+</html>

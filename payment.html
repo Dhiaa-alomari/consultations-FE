@@ -47,7 +47,7 @@
     <script src="assets/js/config.js?v=2"></script>
     <script src="assets/js/utils.js?v=2"></script>
     <script src="assets/js/auth.js?v=2"></script>
-    <script>
+    <script defer>
         protectPage();
         
         const stripe = Stripe(STRIPE_PUBLIC_KEY);
@@ -65,20 +65,23 @@
                     return;
                 }
 
-                document.getElementById('cartItems').innerHTML = cart.items.map(item => `
+                document.getElementById('cartItems').innerHTML = cart.items.map(item => {
+                    const itemData = JSON.stringify(item).replace(/'/g, "&apos;");
+                    return `
                     <div style="display:flex; justify-content:space-between; padding:0.5rem 0;" data-item-id="${item.id}">
                         <span>${item.category_name} - ${item.duration}min</span>
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;"
+                         data-item='${JSON.stringify(itemData)}'>
                             <strong>$${item.computed_price}</strong>
-                            <button 
-                                onclick="removeFromCart(${item.id})" 
-                                style="margin-left:1rem; color:var(--danger); border:none; background:none; cursor:pointer;
-                                font-size:1.3rem; font-weight:bolder;">
+                            <button onclick="editItem(this)" class="customize-btn edit-btn" >
+                                &#9998;
+                            </button>
+                            <button onclick="removeFromCart(${item.id})" class="customize-btn delete-btn">
                                 &times;
                             </button>
                         </div>
                     </div>
-                `).join('');
+                `}).join('');
                 
                 document.getElementById('totalDisplay').innerHTML = `
                     <span>Total:</span>
@@ -89,16 +92,24 @@
             }
         }
 
+        // Remove a specific item from cart
         async function removeFromCart(itemId) {
             showLoader();
             try {
-                await axios.delete(`${API.cart}items/${itemId}`);
+                await axios.delete(`${API.updateItemFromCart}${itemId}`);
                 showToast('Removed from cart successfully!');
                 await loadCart();
             } catch (error) {
                 showToast('Failed to remove item from cart', 'error');
             }
             hideLoader();
+        }
+        
+        // Redirect to updating.html page
+        function editItem(btn) {
+            const item = JSON.parse(btn.parentElement.dataset.item);
+            localStorage.setItem('editItem', item);
+            window.location.href = 'updating.html';
         }
 
         async function handlePayment() {

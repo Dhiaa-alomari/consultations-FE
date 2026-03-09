@@ -14,6 +14,8 @@ function updateAuthUI() {
     const authButtons = document.getElementById('navAuth');
     const userMenu = document.getElementById('navUser');
     
+    if (!authButtons || !userMenu) return;
+
     if (isLoggedIn()) {
         authButtons.style.display = 'none';
         userMenu.style.display = 'flex';

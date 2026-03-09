@@ -3,30 +3,34 @@ let categories = [];
 let selectedCategory = null;
 let bookedTimes = [];
 
-//when user clicks on cart, check if they are logged in and if there items in cart
-document.getElementById('cartBtn').addEventListener('click', async function (event) {
-    showLoader();
-    if (!isLoggedIn()) {
-        showToast('Please login to view your cart', 'error');
-        return;
-    }
-    // check if cart has no items before redirecting to cart page
-    const response = await axios.get(API.cart);
-    const cart = response.data;
-    
-    if (!cart.items || cart.items.length === 0) {
-        event.preventDefault(); // Disable link
-        showToast('Your cart is empty');
-        hideLoader();
-        return;
-    } else {
-        // Redirect to cart page
-        window.location.href = 'payment.html';
-    } 
-});
+// fix bug in updating.html, now all code inside this condition will execute on index.html and not on updating.html.
+if (document.getElementById('cartBtn')) {
+    //when user clicks on cart in navbar, check if user are logged in and there items in cart
+    document.getElementById('cartBtn').addEventListener('click', async function (event) {
+        showLoader();
+        if (!isLoggedIn()) {
+            showToast('Please login to view your cart', 'error');
+            return;
+        }
+        // check if cart has no items before redirecting to cart page
+        const response = await axios.get(API.cart);
+        const cart = response.data;
+        
+        if (!cart.items || cart.items.length === 0) {
+            event.preventDefault(); // Disable link
+            showToast('Your cart is empty');
+            hideLoader();
+            return;
+        } else {
+            // Redirect to cart page
+            window.location.href = 'payment.html';
+        } 
+    });
+}
 
 // Load categories
 async function loadCategories() {
+    if (!document.getElementById('cartBtn')) return; // Don't load categories on updating.html
     try {
         const response = await axios.get(API.categories);
         
@@ -52,7 +56,7 @@ function displayServices() {
     if (!grid) return;
     
     if (categories.length === 0) {
-        grid.innerHTML = '<div class="loading">No services available. Please add categories in Django admin.</div>';
+        grid.innerHTML = '<div class="loading">No services available. Please add categories in System admin.</div>';
         return;
     }
     
@@ -189,10 +193,11 @@ function populateTimeSlots() {
 
 // Update total price
 function updateTotal() {
-    console.log("Updating total function...")
     const duration = document.getElementById('duration').value;
     const totalBox = document.getElementById('totalBox');
     const totalAmount = document.getElementById('totalAmount');
+    const select = document.getElementById('consultationType');
+    let selectedCategoryPrice = select.options[select.selectedIndex].dataset.price
     
     // Validate time before calculating total
     if (!validateBookingTime()) {
@@ -200,8 +205,8 @@ function updateTotal() {
         return;
     }
 
-    if (selectedCategory && duration) {
-        const total = (selectedCategory.price_per_15min * duration) / 15;
+    if (selectedCategoryPrice && duration) {
+        const total = (selectedCategoryPrice * duration) / 15;
         totalAmount.textContent = total.toFixed(2);
         totalBox.style.display = 'block';
     } else {
@@ -282,7 +287,7 @@ async function handleContact(event) {
 }
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {  
+document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     setMinDate('bookingDate');
     
