@@ -1,6 +1,18 @@
+// Handle updating appointment form submission
 async function updateBooking(event){
     event.preventDefault();
+
+    if (!isLoggedIn()) {
+        document.getElementById('authNotice').style.display = 'block';
+        showToast('Please login to book an appointment', 'error');
+        return;
+    }
+
     const item = JSON.parse(localStorage.getItem('editItem'));
+
+    if (!validateBookingTime()) {
+        return;
+    }
 
     const data = {
         category: parseInt(document.getElementById('consultationType').value),

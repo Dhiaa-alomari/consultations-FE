@@ -251,6 +251,7 @@ async function handleBooking(event) {
         setTimeout(() => {
             window.location.href = 'payment.html';
         }, 1000);
+        
     } catch (error) {
         hideLoader();
         console.error('Booking error:', error.response?.data);        
