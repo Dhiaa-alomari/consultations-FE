@@ -78,7 +78,7 @@ async function handlePayment() {
             showToast(error.message, 'error');
         } else if (paymentIntent.status === 'succeeded') {
             showToast('Payment successful!');
-            setTimeout(() => window.location.href = 'profile.html', 2000);
+            setTimeout(() => window.location.href = 'profile.html#appointmentsTable', 2000);
         }
     } catch (error) {
         hideLoader();
