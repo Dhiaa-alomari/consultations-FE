@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' https://js.stripe.com https://m.stripe.network https://cdn.jsdelivr.net;
-        connect-src 'self' https://api.stripe.com https://m.stripe.network https://consultations-be-795aeca2a205.herokuapp.com https://cdn.jsdelivr.net;
-        worker-src 'self' blob: https://m.stripe.network;
-        frame-src https://js.stripe.com;
-        style-src 'self' 'unsafe-inline';
-        img-src 'self' data:;
-    ">
     <meta name="description" content="Book professional legal consultations online with expert lawyers in all legal fields. Affordable rates, convenient Zoom sessions, and trusted advice for individuals and businesses.">
     <meta name="keywords" content="legal consultations, online lawyer, legal advice, affordable legal services, book legal consultation, family law, immigration law, commercial law, corporate legal advice, virtual legal consultation">
     <!-- Favicon -->
@@ -60,96 +51,6 @@
     <script src="assets/js/config.js?v=2"></script>
     <script src="assets/js/utils.js?v=2"></script>
     <script src="assets/js/auth.js?v=2"></script>
-    <script defer>
-        protectPage();
-        
-        const stripe = Stripe(STRIPE_PUBLIC_KEY);
-        const elements = stripe.elements();
-        const cardElement = elements.create('card');
-        cardElement.mount('#card-element');
-
-        async function loadCart() {
-            try {
-                const response = await axios.get(API.cart);
-                const cart = response.data;
-                
-                if (!cart.items || cart.items.length === 0) {
-                    window.location.href = 'index.html';
-                    return;
-                }
-
-                document.getElementById('cartItems').innerHTML = cart.items.map(item => {
-                    const itemData = JSON.stringify(item).replace(/'/g, "&apos;");
-                    return `
-                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0;" data-item-id="${item.id}">
-                        <span>${item.category_name} - ${item.duration}min</span>
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;"
-                         data-item='${JSON.stringify(itemData)}'>
-                            <strong>$${item.computed_price}</strong>
-                            <button onclick="editItem(this)" class="customize-btn edit-btn" >
-                                &#9998;
-                            </button>
-                            <button onclick="removeFromCart(${item.id})" class="customize-btn delete-btn">
-                                &times;
-                            </button>
-                        </div>
-                    </div>
-                `}).join('');
-                
-                document.getElementById('totalDisplay').innerHTML = `
-                    <span>Total:</span>
-                    <strong>$${cart.total}</strong>
-                `;
-            } catch (error) {
-                showToast('Failed to load cart', 'error');
-            }
-        }
-
-        // Remove a specific item from cart
-        async function removeFromCart(itemId) {
-            showLoader();
-            try {
-                await axios.delete(`${API.updateItemFromCart}${itemId}`);
-                showToast('Removed from cart successfully!');
-                await loadCart();
-            } catch (error) {
-                showToast('Failed to remove item from cart', 'error');
-            }
-            hideLoader();
-        }
-        
-        // Redirect to updating.html page
-        function editItem(btn) {
-            const item = JSON.parse(btn.parentElement.dataset.item);
-            localStorage.setItem('editItem', item);
-            window.location.href = 'updating.html';
-        }
-
-        async function handlePayment() {
-            showLoader();
-            try {
-                const checkoutRes = await axios.post(API.checkout);
-                const { client_secret } = checkoutRes.data;
-                
-                const { error, paymentIntent } = await stripe.confirmCardPayment(client_secret, {
-                    payment_method: { card: cardElement }
-                });
-                
-                hideLoader();
-                
-                if (error) {
-                    showToast(error.message, 'error');
-                } else if (paymentIntent.status === 'succeeded') {
-                    showToast('Payment successful!');
-                    setTimeout(() => window.location.href = 'profile.html', 2000);
-                }
-            } catch (error) {
-                hideLoader();
-                showToast('Payment failed', 'error');
-            }
-        }
-
-        loadCart();
-    </script>
+    <script src="assets/js/payment.js"></script>
 </body>
 </html>
