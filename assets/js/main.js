@@ -115,7 +115,10 @@ async function checkAvailability() {
     
     if (!category || !date) {
         timeSelect.disabled = true;
-        timeSelect.innerHTML = '<option value="">Select date and service first</option>';
+        showToast('Select type and date to check availability', 'error');
+        setTimeout(() => {
+            timeSelect.disabled = false;
+        }, 5000);
         return;
     }
     
