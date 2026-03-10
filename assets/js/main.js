@@ -197,7 +197,7 @@ function updateTotal() {
     const totalBox = document.getElementById('totalBox');
     const totalAmount = document.getElementById('totalAmount');
     const select = document.getElementById('consultationType');
-    let selectedCategoryPrice = select.options[select.selectedIndex].dataset.price
+    let selectedCategoryPrice = select.options[select.selectedIndex].dataset.price;
     
     // Validate time before calculating total
     if (!validateBookingTime()) {
@@ -250,8 +250,7 @@ async function handleBooking(event) {
         }, 1000);
     } catch (error) {
         hideLoader();
-        console.error('Booking error:', error.response?.data);
-        
+        console.error('Booking error:', error.response?.data);        
         const errorMsg = error.response?.data?.error || 
                         error.response?.data?.non_field_errors?.[0] ||
                         error.response?.data?.time?.[0] ||

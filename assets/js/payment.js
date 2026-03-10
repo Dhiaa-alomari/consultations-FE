@@ -31,8 +31,8 @@ async function loadCart() {
                     </button>
                 </div>
             </div>
-        `}).join('');
-        
+        `;}).join('');
+
         document.getElementById('totalDisplay').innerHTML = `
             <span>Total:</span>
             <strong>$${cart.total}</strong>

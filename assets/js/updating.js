@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (opt.value == item.category) {
             opt.selected = true;
             select.dispatchEvent(new Event('change'));
-        };
+        }
     });
     
     document.getElementById('bookingDate').value = item.date;

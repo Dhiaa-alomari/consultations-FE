@@ -26,13 +26,13 @@ document.addEventListener('click', function(event) {
     const mobileBtn = document.querySelector('.mobile-btn');
 
     if (navMenu) {
-        if (navMenu.classList.contains('active') 
-            && !navMenu.contains(event.target) 
-            && !mobileBtn.contains(event.target)) {
+        if (navMenu.classList.contains('active') &&
+         !navMenu.contains(event.target) && 
+         !mobileBtn.contains(event.target)) {
             navMenu.classList.remove('active');
         }
     }
-})
+});
 
 // Format date
 function formatDate(dateStr) {
