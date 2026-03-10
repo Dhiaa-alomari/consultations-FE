@@ -33,7 +33,7 @@
                 </button>
                 <form id="bookingForm" onsubmit="updateBooking(event)">
                     <div class="form-group">
-                        <label>Consultation Type *</label>
+                        <label for="consultationType">Consultation Type *</label>
                         <select id="consultationType" required="" onchange="updatePrice()">
                             <option value="">Select service...</option>
                             <option value="6" data-price="35.00">Commercial Law - $35.00/15min</option>
@@ -52,17 +52,17 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Date *</label>
+                            <label for="bookingDate">Date *</label>
                             <input type="date" id="bookingDate" required onchange="checkAvailability()">
                         </div>
                         <div class="form-group">
-                            <label>Time *</label>
+                            <label for="bookingTime">Time *</label>
                             <input type="time" id="bookingTime" required onchange="checkAvailability()">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Duration *</label>
+                        <label for="duration">Duration *</label>
                         <select id="duration" required onchange="updateTotal()">
                             <option value="">Select duration...</option>
                             <option value="15">15 minutes</option>
