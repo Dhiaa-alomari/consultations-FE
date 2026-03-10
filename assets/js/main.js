@@ -116,10 +116,13 @@ async function checkAvailability() {
     if (!category || !date) {
         timeSelect.disabled = true;
         showToast('Select type and date to check availability', 'error');
+
         setTimeout(() => {
             timeSelect.disabled = false;
         }, 5000);
         return;
+    } else {
+        timeSelect.disabled = false;
     }
     
     try {
@@ -293,6 +296,11 @@ async function handleContact(event) {
 document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     setMinDate('bookingDate');
+
+    // this condistion means the current page is index.html and not updating.html
+    if (document.getElementById('cartBtn')) {
+        document.getElementById('bookingTime').disabled = true; // Disable time select until category and date are chosen
+    }
     
     // Update auth notice visibility
     if (!isLoggedIn()) {
