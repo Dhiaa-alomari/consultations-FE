@@ -95,13 +95,13 @@ a {
 }
 
 .btn-login, .btn-register {
-    padding: 0.3rem 1.5rem;
+    padding: 0.1rem 1.5rem 0.3rem;
+    line-height: 25px;
     border: 2px solid var(--primary);
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
-    text-box-trim: trim-start;
 }
 
 #navAuth .btn-login {
@@ -123,7 +123,6 @@ a {
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 1px;
-    text-box-trim: trim-start;
 }
 
 .btn-login:hover, 

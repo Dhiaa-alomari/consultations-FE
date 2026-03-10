@@ -1,6 +1,6 @@
 protectPage();
 
-const stripe = Stripe(STRIPE_PUBLIC_KEY);
+const stripe = Stripe(STRIPE_PUBLIC_KEY); // Initialize Stripe with public key from config.js
 const elements = stripe.elements();
 const cardElement = elements.create('card');
 cardElement.mount('#card-element');
