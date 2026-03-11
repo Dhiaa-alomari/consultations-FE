@@ -125,6 +125,13 @@ document.getElementById('avatarInput').addEventListener('change', async (e) => {
 // Delete Account
 document.getElementById('deleteAccountForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user.is_staff) {
+        showToast('Admin account cannot be deleted.', 'error');
+        return;
+    }
+
     if (!confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
         return;
     }
