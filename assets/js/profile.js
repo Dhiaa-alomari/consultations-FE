@@ -147,7 +147,7 @@ document.getElementById('deleteAccountForm').addEventListener('submit', async (e
         hideLoader();
         const msg = error.response?.data?.error || 'Failed to delete account';
         showToast(msg, 'error');
-        console.log('Delete account error:', error.response);
+        console.error('Delete account error:', error.response);
     }
 });
 
