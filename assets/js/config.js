@@ -10,7 +10,7 @@ const API = {
     logout: `${API_BASE_URL}/auth/logout/`, // POST
     profile: `${API_BASE_URL}/auth/profile/`, // GET, PATCH(update profile, upload avatar)
     changePassword: `${API_BASE_URL}/auth/change-password/`, // POST
-    deleter: `${API_BASE_URL}/auth/delete-account/`, // DELETE
+    deleteAccount: `${API_BASE_URL}/auth/delete-account/`, // DELETE
     
     // Consultations
     categories: `${API_BASE_URL}/consultations/categories/`, // GET

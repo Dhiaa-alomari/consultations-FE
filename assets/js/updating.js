@@ -24,7 +24,7 @@ async function updateBooking(event){
     showLoader();
     try {
         // update a specific item in the cart using its ID
-        const response = await axios.patch(`${API.updateItemFromCart}${item.id}/`, data);
+        await axios.patch(`${API.updateItemFromCart}${item.id}/`, data);
         
         hideLoader();
         showToast('Updated appointment successfully!');

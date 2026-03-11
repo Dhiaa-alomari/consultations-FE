@@ -28,6 +28,7 @@
     </nav>
 
     <div class="profile-container">
+        <!--Profile Header-->
         <div class="profile-header">
             <div class="avatar-upload">
                 <img id="avatarImg" class="avatar-img" src="https://ui-avatars.com/api/?name=User&size=150" alt="Avatar">
@@ -38,6 +39,7 @@
             <p id="userEmail"></p>
         </div>
 
+        <!--Profile Update Form-->
         <div class="auth-card">
             <h3>Update Profile</h3>
             <form id="profileForm">
@@ -63,6 +65,7 @@
             </form>
         </div>
 
+        <!--Change Password Form-->
         <div class="auth-card" style="margin-top:2rem;">
             <h3>Change Password</h3>
             <form id="passwordForm">
@@ -81,7 +84,8 @@
                 <button type="submit" class="btn-primary btn-block">Change Password</button>
             </form>
         </div>
-
+        
+        <!--Appointments Table-->
         <div class="appointments-table" id="appointmentsTable" style="margin-top:2rem;">
             <h3 style="padding:1rem;">My Appointments</h3>
             <table>
@@ -100,6 +104,24 @@
                 </tbody>
             </table>
         </div>
+
+        <!--Delete Account Form-->
+        <div class="auth-card" style="margin-top:2rem;">
+            <div class="delete-header">
+                <h3>Delete Your Account</h3>
+                <span class="show-delete-form customize-btn">+</span>
+            </div>
+            <form id="deleteAccountForm" style="display:none; margin-top:1rem;">
+                <div class="form-group">
+                    <label for="delete_password">Enter Your Password *</label>
+                    <input type="password" id="delete_password" autocomplete="off" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block" style="background:red">
+                    Delete account
+                </button>
+            </form>
+        </div>
+
     </div>
 
     <div id="toast" class="toast"></div>

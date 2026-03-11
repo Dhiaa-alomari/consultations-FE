@@ -122,5 +122,47 @@ document.getElementById('avatarInput').addEventListener('change', async (e) => {
     }
 });
 
+// Delete Account
+document.getElementById('deleteAccountForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+        return;
+    }
+    
+    const data = {
+        password: document.getElementById('delete_password').value
+    };
+    
+    showLoader();
+    try {
+        await axios.delete(API.deleteAccount, { data });
+        hideLoader();
+        showToast('Account deleted!');
+
+        setTimeout(() => {
+            localStorage.clear();
+            window.location.href = 'index.html';
+        }, 5000);
+    } catch (error) {
+        hideLoader();
+        const msg = error.response?.data?.error || 'Failed to delete account';
+        showToast(msg, 'error');
+        console.log('Delete account error:', error.response);
+    }
+});
+
+// (UI): Show or hide delete account form
+document.querySelector('.show-delete-form').addEventListener('click', function(event) {
+    if ( event.target.classList.contains("active") ) {
+        event.target.style.transform = "rotate(0deg)";
+        event.target.classList.remove("active");
+        document.getElementById('deleteAccountForm').style.display = 'none';
+    } else {
+        event.target.style.transform = "rotate(45deg)";
+        event.target.classList.add("active");
+        document.getElementById('deleteAccountForm').style.display = 'block';
+    }
+});
+
 loadProfile();
 loadAppointments();

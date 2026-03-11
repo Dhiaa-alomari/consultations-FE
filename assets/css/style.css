@@ -308,10 +308,6 @@ input[type="time"] {
     gap: 1rem;
 }
 
-/* .form-row .form-group {
-    grid-column: span 2;
-} */
-
 .price-display {
     color: var(--secondary);
     font-weight: 600;
@@ -532,6 +528,18 @@ input[type="time"] {
     font-weight: 600;
 }
 
+.delete-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-delete-form {
+    color: var(--primary);
+    font-size: 25px;
+    background-color: transparent !important;
+    transition: all 20s ease-in-out;
+}
+
 .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
@@ -550,7 +558,6 @@ input[type="time"] {
     color: var(--secondary);
 }
 
-/* ستايل الزر */
 .customize-btn {
     display: inline-flex;
     align-items: center;
