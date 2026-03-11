@@ -49,145 +49,150 @@
         </div>
     </header>
 
-    <!-- Services -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-desc">Choose from our comprehensive legal services</p>
-            <div class="services-grid" id="servicesGrid">
-                <div class="loading">Loading services...</div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
 
-    <!-- Booking -->
-    <section id="booking" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Book Your Consultation</h2>
-            <p class="section-desc">Consultations are conducted via
-                <a href="https://zoom.us/download" target="blank">Zoom</a> 
-                for your convenience. Please ensure the app is installed on your device at the time of the consultation
-            </p>
-            <div class="booking-card">
-                <form id="bookingForm" onsubmit="handleBooking(event)">
-                    <div class="form-group">
-                        <label>Consultation Type *</label>
-                        <select id="consultationType" required onchange="updatePrice()">
-                            <option value="">Select service...</option>
-                        </select>
-                        <span class="price-display" id="priceDisplay"></span>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="bookingDate">Date *</label>
-                            <input type="date" id="bookingDate" required onchange="checkAvailability()">
-                        </div>
-                        <div class="form-group">
-                            <label for="bookingTime">Time *</label>
-                            <input type="time" id="bookingTime" required onchange="checkAvailability()">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="duration">Duration *</label>
-                        <select id="duration" required onchange="updateTotal()">
-                            <option value="">Select duration...</option>
-                            <option value="15">15 minutes</option>
-                            <option value="30">30 minutes</option>
-                            <option value="60">1 hour</option>
-                            <option value="120">2 hours</option>
-                        </select>
-                    </div>
-
-                    <div class="total-box" id="totalBox" style="display:none;">
-                        <span>Total:</span>
-                        <strong>$<span id="totalAmount">0.00</span></strong>
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-block">Book Appointment</button>
-                    
-                    <p class="auth-notice" id="authNotice" style="display:none;">
-                        Please <a href="login.html">login</a> to book
-                    </p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Client Reviews</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Excellent service! Helped me with my immigration case."</p>
-                    <div class="client">
-                        <strong>Sarah M.</strong>
-                        <span>Immigration</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Professional and knowledgeable. Highly recommend!"</p>
-                    <div class="client">
-                        <strong>John D.</strong>
-                        <span>Family Law</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Fast response and clear advice. Great experience!"</p>
-                    <div class="client">
-                        <strong>Lisa K.</strong>
-                        <span>Commercial Law</span>
-                    </div>
+        <!-- Services -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-desc">Choose from our comprehensive legal services</p>
+                <div class="services-grid" id="servicesGrid">
+                    <div class="loading">Loading services...</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-card">
-                <form id="contactForm" onsubmit="handleContact(event)">
-                    <div class="form-row">
+        <!-- Booking -->
+        <section id="booking" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Book Your Consultation</h2>
+                <p class="section-desc">Consultations are conducted via
+                    <a href="https://zoom.us/download" target="blank">Zoom</a> 
+                    for your convenience. Please ensure the app is installed on your device at the time of the consultation
+                </p>
+                <div class="booking-card">
+                    <form id="bookingForm" onsubmit="handleBooking(event)">
                         <div class="form-group">
-                            <label for="contactName">Name *</label>
-                            <input type="text" id="contactName" autocomplete="off" required>
+                            <label for="consultationType">Consultation Type *</label>
+                            <select id="consultationType" required onchange="updatePrice()">
+                                <option value="">Select service...</option>
+                            </select>
+                            <span class="price-display" id="priceDisplay"></span>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Date *</label>
+                                <input type="date" id="bookingDate" required onchange="checkAvailability()">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Time *</label>
+                                <input type="time" id="bookingTime" required onchange="checkAvailability()">
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label for="contactEmail">Email *</label>
-                            <input type="email" id="contactEmail" autocomplete="off" required>
+                            <label for="duration">Duration *</label>
+                            <select id="duration" required onchange="updateTotal()">
+                                <option value="">Select duration...</option>
+                                <option value="15">15 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="60">1 hour</option>
+                                <option value="120">2 hours</option>
+                            </select>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="contactSubject">Subject *</label>
-                        <select id="contactSubject" required>
-                            <option value="">Select subject...</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="billing">Billing</option>
-                            <option value="technical">Technical</option>
-                            <option value="legal">Legal Question</option>
-                            <option value="complaint">Complaint</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
+                        <div class="total-box" id="totalBox" style="display:none;">
+                            <span>Total:</span>
+                            <strong>$<span id="totalAmount">0.00</span></strong>
+                        </div>
 
-                    <div class="form-group">
-                        <label>Message *</label>
-                        <textarea id="contactMessage" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-block">Send Message</button>
-                </form>
+                        <button type="submit" class="btn-primary btn-block">Book Appointment</button>
+                        
+                        <p class="auth-notice" id="authNotice" style="display:none;">
+                            Please <a href="login.html">login</a> to book
+                        </p>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Client Reviews</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>"Excellent service! Helped me with my immigration case."</p>
+                        <div class="client">
+                            <strong>Sarah M.</strong>
+                            <span>Immigration</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>"Professional and knowledgeable. Highly recommend!"</p>
+                        <div class="client">
+                            <strong>John D.</strong>
+                            <span>Family Law</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>"Fast response and clear advice. Great experience!"</p>
+                        <div class="client">
+                            <strong>Lisa K.</strong>
+                            <span>Commercial Law</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-card">
+                    <form id="contactForm" onsubmit="handleContact(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Name *</label>
+                                <input type="text" id="contactName" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" autocomplete="off" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" required>
+                                <option value="">Select subject...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="billing">Billing</option>
+                                <option value="technical">Technical</option>
+                                <option value="legal">Legal Question</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
