@@ -5,7 +5,7 @@ let bookedTimes = [];
 
 // fix bug in updating.html, now all code inside this condition will execute on index.html and not on updating.html.
 if (document.getElementById('cartBtn')) {
-    //when user clicks on cart in navbar, check if user are logged in and there items in cart
+    //when user clicks on cart in navbar, check if user logged in and there items in cart
     document.getElementById('cartBtn').addEventListener('click', async function (event) {
         showLoader();
         if (!isLoggedIn()) {

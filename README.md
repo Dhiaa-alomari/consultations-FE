@@ -1,16 +1,13 @@
 # Consultation - Client Side
 
-- ![am i responsive](/readme.img/ami.png)
-- live link - [last-epics](https://last-epics-76629a697a31.herokuapp.com/)
-   - The name Last Epics was chosen to represent a space where users can share and preserve their most meaningful and extraordinary moments. 'Epics' symbolizes grand and memorable stories, while 'Last' reflects timelessness, ensuring that these shared experiences remain accessible and celebrated. Whether it's a breathtaking photograph, a heartfelt story, or a special memory, Last Epics is a digital archive where every post tells a story worth remembering.
----
+- ![am i responsive](/images-readme/Iamresponsive.jpg)
+- live link - [Consultations](https://dhiaa-alomari.github.io/consultations-FE/index.html)
 
 ## Introduction
-- E-pics is a platform designed for photo enthusiasts who want to share their images with others. Users can not only upload their own photos but also download any images available on the site.
-
-- The goal is to foster a vibrant sharing community where you can either contribute by uploading your photos or simply browse and appreciate the creations of others.
-
-- Additionally, you can connect with the community by leaving comments, giving likes, or organizing your favorite posts into private albums for easy access.
+   - Legal Consultation Services
+   Our platform offers an online service for a wide range of legal consultations, including but not limited to family law, criminal law, misdemeanors, commercial contracts, immigration law, and more.
+   Through our application, users can easily book a legal consultation and connect with experienced lawyers and legal experts via Zoom. Before scheduling, users can select the type of consultation they require and specify the duration of the session.
+   To complete the booking process, users will need to pay the specified consultation fee depending on the type and length of the service. Payments are securely processed using a bank card.
 
 ---
 ## Table of Contents
@@ -48,29 +45,41 @@
 
 ## User Profiles
 
-- The casual user finds joy in browsing through captivating photos as a way to unwind and draw inspiration. They appreciate discovering fresh photography styles and occasionally download images for personal use. 
-- The convenience of saving their favorite photos into albums for easy access later is something they highly value.The amateur photographer enjoys sharing their work with others to gather feedback.
-- They find satisfaction in observing how their creations are received and take pride in contributing to a creative community.
-- The platform makes it simple for them to upload their work and gain exposure. Being able to organize their own content and explore others' creations in albums is a significant perk.
-- The enthusiast loves collecting and organizing photos. They take pleasure in curating their collections,
-  showcasing them to family and friends.
-- A seamless process for adding albums and posts is essential, as they frequently log in to explore, download, and refine their private collections.
+User Experience on Our Legal Consultation Platform
+
+- Users often find comfort in browsing our diverse array of legal consultation services as a way to gain insights and reassurance. They appreciate discovering new legal knowledge and occasionally upload queries or documents for personal advice.
+
+- They take satisfaction in seeing expert responses to their inquiries and value their contributions to a knowledgeable network.
+
+- Our platform simplifies the process of booking consultations, allowing users to gain the legal recognition they seek. The functionality to organize their consultation history and explore various legal services is an essential feature.
+
+- Users love collecting and organizing their legal documents and inquiries. They enjoy curating their requests and sharing their experiences with family and friends.
+
+- The seamless process of booking consultations and managing inquiries is crucial, as they frequently log in to explore, schedule, and enhance their legal knowledge
 
 ---
 
 ### User Goals
 
-- The Casual User these users want to discover new photography styles and trends.
-  They enjoy scrolling as a relaxing activity.
-- The Amateur Photographer:
-  This group uses the platform to share their photos and connect with the community.They appreciate feedback through likes, comments, and download counts.
-- The platform helps them gain exposure for their work. The - Enthusiast:
-Enthusiasts love finding and collecting beautiful images.
-They take pride in curating albums of amazing pieces.
-Website Owner Goals The owner’s goal is to increase website traffic.More users mean they can add features to improve the experience for current users and attract new ones.
-- This could lead to more ad revenue and potential subscription options.
-- New features must be carefully chosen to keep existing users happy.
-The site needs to work well on both mobile and larger screens for easy use.
+The Casual User:
+- These users seek to discover new legal services and insights. They enjoy browsing through consultation options as a relaxing way to explore their legal needs.
+
+The Client Seeking Advice:
+- This group uses the platform to book consultations and connect with legal professionals. They appreciate feedback and guidance through interactions, session reviews, and the clarity of information provided.
+
+The Engaged User:
+- Enthusiasts enjoy finding and collecting useful legal resources. They take pride in organizing their consultations and gathering valuable legal knowledge.
+
+Website Owner Goals:
+- The owner's primary goal is to increase website traffic. More users lead to opportunities to expand features to enhance the experience for current users and attract new clients.
+
+- This growth can result in increased revenue from consultations and potential subscription services for premium features.
+
+- New features must be carefully selected to ensure existing users remain satisfied and engaged.
+
+- The site must function seamlessly on both mobile devices and larger screens to ensure easy access and usability for all users.
+
+
 
 ---
 ## Design
@@ -78,248 +87,155 @@ The site needs to work well on both mobile and larger screens for easy use.
 ### Wireframes section
 
 - Mobile and iPad versions will share the same structure.
-- Home page wireframe.
-- ![Mobile](/readme.img/wireframes.mobile.png) ![navbar](/readme.img/navbar.drop.png)
-- On mobile and iPad devices, clicking the hamburger icon opens the navigation menu, allowing users to access options such as Add Post, Liked Posts, Albums, and Settings. The menu remains open for easy navigation, and users should click the hamburger icon again to close it if user want it.
+- Mobile - Home page wireframe.
+- ![Mobile - Home page](/images-readme/index_mobile.drawio.png) 
+
+- On mobile and iPad devices, clicking the hamburger icon opens the navigation menu, allowing users to access options such as services, contact, (log in, and register / cart, profile and logout). The menu remains open for easy navigation, and users should click the hamburger icon again to close it if user want it or click on anywhere except this menu.
 ---
 
-- Login and register page wireframe
-- ![login](/readme.img/login.page.wireframes.png)![register](/readme.img/registerpage.wirefram.png)
-
----
-
-- User when logged in.
-- ![logged in wirefram](/readme.img/wire.loggedin.png)
+- Mobile - Cart page wireframe
+- ![Mobile - Cart page](/images-readme/payment_mobile.drawio.png)
 
 ---
 
-- Album
-- ![albumpagewire](/readme.img/wire.album.png)
+- Mobile - log in page wireframe.
+- ![Mobile - log in page](/images-readme/login_mobile.drawio.png)
 
 ---
 
-- liked posts page
-- ![wirelikedposts](/readme.img/wire.liked.p.png)
+- Desktop and wide screen devices versions will share the same structure.
+- Desktop - Home page wireframe
+- ![Desktop - Home page](/images-readme/index_desktop.drawio.png)
 
 ---
 
-- Add new posts
-- ![wirenewpost](/readme.img/wire.add.new.post.png)
+- Desktop - Cart page wireframe
+- ![Desktop - Cart page](/images-readme/payment_desktop.drawio.png)
 
 ---
 
-- Setting page
-- ![wiresettings](/readme.img/wire.settings.png)
+- Desktop - Profile page wireframe
+- ![Desktop - Profile page](/images-readme/profile_desktop.drawio.png)
 
 ---
 
-- Laptop and desktop versions will share the same structure.
-- Home
-- ![wirelaphome](/readme.img/wire.laptop.home.png)
+- Desktop - Log in page wireframe
+- ![Desktop - Log in page](/images-readme/login_desktop.drawio.png)
 
 ---
 
-- Register
-- ![wire.lap.register](/readme.img/wire.lap.register.png)
-
----
-
-- Login
-- ![wire.lap.login](/readme.img/wire.lap.login.png)
-
----
-
-- User page
-- ![user page](/readme.img/wire.lap.userpage.png)
-
----
-
-- User home page
-- While logged in, if a user has added posts, a dropdown menu will appear in the top-right corner next to the avatar on each post. This menu allows the user to access the "Go to details" option for their own posts.
-- ![User home page](/readme.img/wire.user.lap.option.png)
-- If the user clicks on Go to details, they will be taken to a page where they can delete the image or edit its details.
-- ![delete img](/readme.img/wire.delete.imglap.png)
-
----
-
-- Comment
-  - Like post.
-  - Download post.
-  - Add post to album.
-  - write a comment. Edit or delete your comment.
-  - Like othere user's comment.
-  - If you have liked any post or comment you can also unlike it by clicking on it again.
-- ![comment](/readme.img/wirer.u.dc.png)
-
----
-
-- Album page
-- ![album wire](/readme.img/wire.album.lap.png)
-
----
-
-- Settings page
-- ![Wirefram for settings page](/readme.img/Wire.setting.lap.png)
-
----
-
-- Edit Post
-- Should not leave any blank fields.
-- ![Edit](/readme.img/wire.Edit.png)
----
 ## Features
+
+### Authentication and Athorization System:
+  - Admin account cannot be delete it.
+  - Every user has sperated cart and profile page, cannot other user get access to it.
+  - Must user input correct password when want delete user account.
+  - Encrypt every password for more secure by backend server.
+  - Every email must be unique.
+  - Log in session has limit time when user is not active on page.
+
+### Payment (Cart Page):
+  - Empty Cart will prevent user to open it.
+  - Show all booking consultations.
+  - Can remove any booking consultations by delete button that located beside this booking.
+  - Can update any booking consultations by edit button that located beside this booking.
+  - To complete booking should click on pay button.
+  - Show total price dependson duration and consultation type for every booking.
+  - Can continue to book more consultations or browse the website by clicking on logo at navbar.
+
+---
+
+### Profile Page:
+  - Show all a user's booking on appointment table that had been paid previously.
+  - Can change any of user details by user information form.
+  - Can change user password by change password form.
+  - Can remove user account by input user password, just admin user is not able to removing.
+  - Show avatar on profile page and can be change it.
+  - Upload Avatar: Users can upload an image file to set as their profile avatar.
+  - Username Field:
+  - Displays the current username of the user.
+  - Allows editing to update the username.
+  - Biography Field:
+    - Text area for users to input or edit their biography.
+  - Avatar Upload:
+    - Provides an option to upload a profile picture (avatar).
+    - Includes a "Choose File" button for selecting an image file.
+    - Displays "No file chosen" by default when no file is uploaded.
+  - Save Changes:
+    - Save Button: An orange button labeled "Save" to confirm and apply updates made to the profile.
+
+---
+
+### Updating booking Page:
+  - Show booking details.
+  - Can change any booking data like (consultation type, duratio, date and time).
+  - Show total prise and it is updated when user change duration or type.
+  - Validation prevent user book before 9am and after 6pm.
+  - Validation prevent user book old date.
+  - Show information messages when user get action on updating form.
+  - Validation is running on both sides (browser side and server side).
+
+---
 
 ### Home Page
 
-- E-Pics Branding: Displays the application title prominently at the top for clear identification.
 - Navigation Bar:
-  Includes options to navigate to the Home, Login, and Register pages for quick access.
-- ![Nav__bar](/readme.img/navigation%20bar.png)
-- The "E-Pics" text, located on the top-left corner of the navigation bar.It is clickable and serves as a home button, allowing users to quickly return to the homepage from anywhere on the site.
-- ![clickable](/readme.img/topright.png)
+  Includes options to navigate to the Home, Services, Contact, Login, and Register pages for quick access.
+- The "Consultations" text, located on the top-left corner of the navigation bar.It is clickable and serves as a home button, allowing users to quickly return to the homepage from anywhere on the site.
+- When user is logged in the navigation bar will hide login and register button.
+- When user is logged in the navigation bar will show logout button, profile and cart.
+- Hero section is under the navigation bar and shows image with a book button.
+- Home page includes three sections customers review, booking form and contact form.
+- Footer bar is at tile page and includes some contact information.
 ---
 
 ### Registration Page
 
-- The Registration Page allows new users to create an account by providing their credentials and uploading a profile avatar.
-  - Username: Users can enter their desired username. Username cannot exceed 15 letters.The username field must be unique.
+- The Registration Page allows new users to create an account by providing their credentials.
+  - Username: Users can enter their desired username.
+  - E-mail: just an unique email get approved.
   - Password: Users can input their password for account security. Password must have at least 8 characters.
   - Confirm Password: Users must re-enter their password to ensure it matches.
-  - Upload Avatar: Users can upload an image file to set as their profile avatar.
   - Register button to submit their information and create an account.
-- ![Registration](/readme.img/registerpage.png)
 - Register Button Behavior:
-   - 🟪 Light Purple: Indicates that the form is incomplete (e.g., the username field is empty), and the button is disabled unclickable.
-   - 🟣 darker Purple: Indicates that the form is correctly filled out, and the button is active and ready to submit.
+   - orange color: Indicates that the form is incomplete (e.g., the username field is empty), and the button is disabled unclickable.
+   - darker orange: Indicates that the form is correctly filled out, and the button is active and ready to submit.
 ---
 
 ### Login page
 
 - The Login Page allows registered users to access their accounts by entering their credentials.
-  -Username: Users must enter their registered username.
+- Username: Users must enter their registered username.
+- E-mail that provided by user in register form can input in username field as alternative of username.
 - Password: Users must enter their account password.
 - Users can click the "Login" button to authenticate and access their account.
-- ![login](/readme.img/login.page.png)
 
 ---
 
-- Search Functionality:
-  A search bar allows users to search posts by keywords like Users, Titles, or Tags for quick filtering and navigation.
-- ![Search bar](/readme.img/searchbar.png)
+### Our Customers Reviews Section
+
+- Show customers review by gentle design and.
+- Show customers rating by gold stars.
 
 ---
 
-- Post Display Individual Post Card:
-  Shows a large image preview of the post.
-  Includes the title, Description or tag for the post.
-- ![post](/readme.img/postdisplay.png)
+### Book consultation Section
+
+- Simple form for using.
+- There validation rules on most form fields. 
+- Interactive notification when user input correct or wrong data in fields.
+- Check availability system send and recieve from database.
+- Form fields is protected on client side and server side.
 
 ---
 
-- Post Actions: Like Button: Allows users to like a post, with a heart icon will turn _red_ and the count of likes displayed. If you unlike the post the heard icon will turn black.
-- If you like a post, the heart icon will turn red and remain red as long as you're signed in. When you sign out, the heart icon will appear gray for every post. However, when you sign back in, any posts you've previously liked will automatically display a red heart again, otherwise heart will display black when you are sig in.
-- ![redheart](/readme.img/like.botton.png)
-- Comment Button: Enables users to comment on the post, with the count of comments displayed.
-- Download Button: Provides an option to download the post content, with the download count displayed and valid date is associated with the post.
-- ![postaction](/readme.img/postactions.png)
+### Contact Us Section
 
----
-
-- Pagination: Pagination controls allow users to navigate through posts, displaying items per page (default is 5).
-- Navigation includes:
-  - Items per page dropdown.
-  - Buttons for "First", " < ", "Next", and " > " pages.
-- ![pagination](/readme.img/pagination.png)
-
----
-
-### Comments Section
-
-- As a logged-in user, I can click on the comment icon to share my thoughts on any post.
-- Users can read comments from other users if any exist. Users can like comments if they wish but _NOT_ your own comment.
-- You can also delete or edit your own comment while when you are logged in
-- ![edit delete comment](/readme.img/edit.delete.comment.png)
-
----
-
-- Select post to album
-- If you don't have an album, you need to create one first in album page.
-- Users can add posts to albums.
-- ![select album](/readme.img/selecalbum.png)
-
----
-
-### Add Post Page
-
-- Home Button: Quickly returns to the main dashboard.
-- Navigation Menu.
-  - Dropdown menu next to the user’s name.
-    - Add Post, Liked Posts, Albums, Settings.
-    - ![nav dropdown](/readme.img/addpostpage.png)
-
----
-
-- Form for Adding New Posts.
-  - Title Input Field: - Placeholder: "Enter post title." - Placeholder: "Enter post description." - Placeholder: "Enter tags" - Users can upload a file or image related to their post.
-    Includes a "Choose File" button for selecting the file. Size to download the image max 2MB.
-    Displays "No file chosen" by default when no file has been uploaded. - A Submit button with a visually distinct style (purple).
-- ![form add post](/readme.img/formaddnewpost.png)
-
----
-
-### Liked Posts
-
-- When a user likes a post while logged in, it will automatically be added to the "Liked Posts" page, and the heart icon should be red.
-- ![likepost](/readme.img/likepost.png)
-
----
-
-### Post owner
-
-- When a user is logged in and viewing a post they created, a dropdown menu will appear next to their avatar image. Clicking on the dropdown will show the option "Go to details".
-- ![go to details](/readme.img/godettails.png)
-- If you click on "Go to details", you will be taken to a page where you can edit or delete the image.
-- ![delete post](/readme.img/d.e.post.png)
-
----
-
-### Albums Page
-
-Page Description:
-
-- Provides a clear explanation of the functionality: "Here you can create albums, add images to them, and view your albums sorted with your favorite photos."
-
-Create Album:
-
-- Users can input a title for their new album.
-- Create Button:
-  A visually distinct purple button to create a new album.
-- Displays existing albums as separate cards. After creating an album, users will have the option to either delete the album or edit its name.
-- ![album](/readme.img/addalbum1.png)
-
----
-
-### Settings Page
-
-- Username Field:
-  - Displays the current username of the user.
-  - Allows editing to update the username.
-- Biography Field:
-  - Text area for users to input or edit their biography.
-- Avatar Upload:
-  - Provides an option to upload a profile picture (avatar).
-  - Includes a "Choose File" button for selecting an image file.
-  - Displays "No file chosen" by default when no file is uploaded.
-- Theme Settings:
-  - Explains how the theme changes automatically based on the user’s local time:
-    - Dark mode: 6 AM to 6 PM.
-    - Light mode: Other times.
-- Theme Checkbox:
-  - Displays the current theme (e.g., "Current Theme: Light") with an optional checkbox to manage theme preferences.
-- Save Changes:
-  - Save Button: A prominent purple button labeled "Save Changes" to confirm and apply updates made to the profile or settings.
-- ![settings](/readme.img/settingsform.png)
-
+- Simple form for using.
+- There validation rules on email field. 
+- Show success message when user send message.
+- Form fields is protected on client side and server side.
+- There no need user is logged in or has account.
 ---
 
 ### Logged out
@@ -331,17 +247,10 @@ Create Album:
 ### Toaster Messages in the Project
 
 - In this project, toaster messages are used to provide real-time feedback for user actions. These notifications appear in the bottom right corner of the screen to inform users about the success or failure of their actions.
-- here are some example
-- ![toster](/readme.img/toaster.png) .![toaster1](/readme.img/toaster1.png)
-- ![toaster2](/readme.img/toaster2.png) .![toaster3](/readme.img/toaster3.png)
 
 ---
 ## Accessibility & UX Considerations:
 - This application follows accessibility guidelines by using semantic HTML, providing alt text for images, ensuring keyboard navigability, and maintaining sufficient color contrast. The user interface is designed for ease of use with clear navigation, intuitive interactions, and responsive design.
----
-
-
-
 ---
 
 ## Manual test
@@ -350,23 +259,15 @@ Create Album:
 
 | Tasks                                                                                                               | Yes | No  |
 | ------------------------------------------------------------------------------------------------------------------- | --- | --- |
-| Click on E-pics home page load.                                                                                     | x   |     |
+| Click on Consultations home page load.                                                                                     | x   |     |
 | Click on home icon, home page load.                                                                                 | x   |     |
 | Click on login, form login page load.                                                                              | x   |     |
 | Click on register, form register page load.                                                                         | x   |     |
 | On smaller screen navbar turn to hamburger icon.                                                                    | x   |     |
 | click on hamburger icon it will expand.                                                                             | x   |     |
-| Hamburger icon expands shows(Home, loin, register) before login.                                                    | x   |     |
-| Hamburger icon after login shows(home, user name,logout, then inside arrow\*add post, like posts, album, settings). | x   |     |
+| Hamburger icon expands shows(Home, login, register) before login.                                                    | x   |     |
+| Hamburger icon after login shows(home, profile, cart,logout). | x   |     |
 
----
-
-### Search field
-
-| Tasks                                                                       | Yes | No  |
-| --------------------------------------------------------------------------- | --- | --- |
-| Search bar is displayed on Home page,Liked posts page, and user posts page. | x   |     |
-| I can search for image by Users name, title and tags.                       | x   |     |
 
 ---
 
@@ -375,15 +276,13 @@ Create Album:
 | Tasks                                                                        | Yes | No  |
 | ---------------------------------------------------------------------------- | --- | --- |
 | Page loads.                                                                  | x   |     |
-| post feed has (heart ican,comment icon, and download ican).                   | x   |     |
-| If you are not login, you will be able to see the posts only.                | x   |     |
-| If you are login, you can like, comment, add post and so on.                 | x   |     |
-| Click on heart icon(like the post)count is incremented +1 .                   | x   |     |
-| Click again on heart icon same post unlike count is decremented -1 .          | x   |     |
-| Click on comment icon, it will take you to the post detail view.             | x   |     |
-| Click on download icon, the post will download and count is incremented +1 . | x   |     |
-| If you click on your owne avatar image you get dropbar(go to details).       | x   |     |
-| pagination, I can choose to have 5, 10, or 20, posts in my home page.        | x   |     |
+| If you are not logged in, you will not be able to book consultation.                | x   |     |
+| If you are logged in, you will be able to book consultation.                 | x   |     |
+| Click on book appointment, it will take you to your cart page.                   | x   |     |
+| Click on cart in navbar when cart is empty, cart page does not open.          | x   |     |
+| Click on send in contact form, it will show you a success message.             | x   |     |
+| Time list not working when type field and date list not be selected. | x   |     |
+| Click on book now button, you will move to book consultation section.       | x   |     |
 
 ---
 
@@ -395,7 +294,6 @@ Create Album:
 | Click on register, form load to create new user.                          | x   |     |
 | The form should not be any blank fields.                                  | x   |     |
 | Both passwords must match.                                                | x   |     |
-| Upload Avatar choose file for img.                                        | x   |     |
 | click on Register, successful register you are taken to the sign in page. | x   |     |
 
 ---
@@ -405,105 +303,154 @@ Create Album:
 | Tasks                                              | Yes | No  |
 | -------------------------------------------------- | --- | --- |
 | Click on Login, dispaly form for login page.       | x   |     |
-| Form shouldnt be blank.                            | x   |     |
+| Form shouldn't be blank.                            | x   |     |
 | You have sign, and taken to your posts page.       | x   |     |
-| After login, the user name displays in the navbar. | x   |     |
+| You can sign by email or username.       | x   |     |
+| After login, logout, cart and profile display in the navbar. | x   |     |
 
 ---
 
-### Add Post page.
+### Book a new appointment.
 
 | Tasks                                                            | Yes | No  |
 | ---------------------------------------------------------------- | --- | --- |
-| You should be logged in to access (add post).                    | x   |     |
-| Click on add post, page will load with form.                     | x   |     |
+| You should be logged in to have ability to booking.                    | x   |     |
+| Click on book button, you will move to cart page.                     | x   |     |
 | Message from the form will displays if user do a mistake         | x   |     |
-| Upload File-Image.                                               | x   |     |
-| Submit, your post will be add to your page.                      | x   |     |
+| Check availability when select date and time.                                               | x   |     |
+| Submit, your booking will be add to your cart.                      | x   |     |
 | When the form is submitted there is a success toast notification | x   |     |
 
 ---
 
-### Albums
+### Profile
 
 | Tasks                                                                                             | Yes | No  |
 | ------------------------------------------------------------------------------------------------- | --- | --- |
-| You must be logged in to access the Albums page.                                                  | x   |     |
-| Navigate to the navbar, click the arrow dropdown, and select the Albums page to load it.          | x   |     |
-| A form field will be displayed to name your album, along with a button to create it.              | x   |     |
-| After creating an album, you can edit or delete it as needed.                                     | x   |     |
-| For every action performed, the appropriate message will be displayed in the bottom-right corner. | x   |     |
+| You must be logged in to access Profile. page.                                                  | x   |     |
+| Appointment table show all paid booking.          | x   |     |
+| Profile form fields will display all user information.              | x   |     |
+| Upload avatar is working.                                     | x   |     |
+| For every action performed, the appropriate message will be displayed in the top-right corner. | x   |     |
+| Change password form works.                                     | x   |     |
+
 
 ---
 
 ## Validation
 
-- I tested all my pages through this site <https://jigsaw.w3.org/css-validator/#validate_by_uri> and result was
   **Document checking completed. No errors or warnings to show.**
-- I have validated all my JavaScript and JSX files using ESLint, and no errors were found.
-- I have validated all my CSS files using the W3C Jigsaw Validator, and no errors were found.
+- I tested all my pages and result was no error in html, css and javascript code.
+- I have validated all my __html__ files using the W3C Validator, and no errors were found.
+### index.html
+- ![index html test](/images-readme/index_html_check.jpg)
+### login.html
+- ![login html test](/images-readme/login_html_check.jpg)
+### register.html
+- ![sign up html test](/images-readme/register_html_check.jpg)
+### payment.html
+- ![cart html test](/images-readme/payment_html_check.jpg)
+### updating.html
+- ![updating html test](/images-readme/updating_html_check.jpg)
+### profile.html
+- ![profile html test](/images-readme/profile_html_check.jpg)
 ---
-### Lighthouse
-- ![lighthouse](/readme.img/light.house.png)
+- I have validated all my __JavaScript__ and JSX files using ESLint, and no errors were found.
+### main.js
+- ![main js test](/images-readme/main_js_validator_test.jpg)
+### profile.js
+- ![profile js test](/images-readme/profile_js_validator_test.jpg)
+### payment.js
+- ![payment js test](/images-readme/payment_js_validator_test.jpg)
+### auth.js
+- ![auth js test](/images-readme/auth_js_validator_test.jpg)
+### config.js
+- ![config js test](/images-readme/config_js_validator_test.jpg)
+### updating.js
+- ![updating js test](/images-readme/updating_js_validator_test.jpg)
+### utils.js
+- ![utils js test](/images-readme/utils_js_validator_test.jpg)
+---
+### style.css
+- I have validated all my __CSS__ files using the W3C Jigsaw Validator, and no errors were found.
+- ![css test](/images-readme/w3c_css_validator_test.jpg)
+---
+### Lighthouse test
+- ![lighthouse test](/images-readme/lighthouse_test.jpg)
+
+### Stripe payment test
+- ![Stripe test](/images-readme/prove_succeded_payment_on_stripe.png)
+
 ---
 
 ## Technologies Used
 
 - Core Technologies:
-  - React (v18.2.0): JavaScript library for building user interfaces.
-  - React DOM (v18.3.1): Renders React components into the DOM.
-  - React Scripts (v5.0.1): Configuration and build scripts from Create React App
+  - __Vanila Javascript__:  script language.
 - Styling & UI:
-  - Bootstrap (v5.3.3): Responsive design and consistent styling.
-  - Custom CSS.
-- React Router DOM (v6.28.1): Enables dynamic client-side routing.
+  - __CSS__: cascading style sheets.
+- Markup Language:
+  - __HTML__: Hyper Text Markup Language.
 - State Management & Utilities:
-  - Zustand (v5.0.2): Lightweight state management.
-  - Axios (v1.7.9): Handles HTTP requests with a global axiosInstance.
-  - JWT Decode (v3.1.2): Decodes JSON Web Tokens for authentication.
-  - Date-fns (v4.1.0) & Date-fns-tz (v3.2.0): Date and timezone utilities.
-- Head Management & Notifications:
-  - React Helmet Async (v2.0.5): Manages document head elements.
-  - React Toastify (v11.0.2): Displays toast notifications.
-- Heroku: Application deployment platform.
+  - __Axios__: Handles HTTP requests with a global axiosInstance.
+  - __Local Storage__: store data in web browser .
+
 
 ---
 
 ## Deployment
 
-- Deploy the react project to heroku.
-  - Create new file name (Procfile) in the root-directory.
-    - Add <web: serve -s build> in the file.
-  - Package.json file
-    - In the scripts section add "heroku-prebuild": "npm install -g serve"
+- Deploy the project on __Github Pages__.
+  - Enable GitHub Pages
+    - Go to Your Repository on GitHub: Navigate to your repository in your web browser.
 
-#### Heroku
+  - Access Repository Settings:
+    - Click on the "Settings" tab.
+    - Scroll to GitHub Pages:
+    - Find the "Pages" section in the left sidebar.
+    - Under the "Source" section, select the branch you want to use (usually main or master).
+    - If needed, select the / (root) folder for your project.
+    - Save Your Changes: Click "Save" if prompted.
 
-1.  Create an account and log in to Heroku.
-2.  Create a new app and select your preferred region.
-3.  Settings:
-
-- Navigate to the Settings tab of your app.
-- Under Config Vars, add any global environment variables (e.g., API keys, URLs).
-
-4.  Deploy:
-    - Navigate to the Deploy tab of your app.
-    - Select (connect to GitHub).
-5.  Search for your repository in the search field and connect it.
-6.  Deploy branch:
-
-- Click Deploy Branch to start the deployment process.
+  - Access Your Deployed Site View Your Site:
+    - After enabling GitHub Pages, your site will be available at https://username.github.io/repository-name/ (or https://username.github.io/ for user sites).
+    - It may take a few minutes for the site to be accessible.
+    - Check for Issues: If the page doesn’t load, ensure your index.html file is in the root directory, as GitHub Pages defaults to looking for this file.
 
 ---
 ## Bugs
-- Postdetails file:
-I had error in the console while deleting posts; it was successful but still was showing error because I had duplicate line of code and delete unnecessary one. The error was gone.
-- ![postdetail](/readme.img/bug.postdetail.png)
+- Updating for specific appointment on web browser in mobile not going:
+  - I had no error in the console while updating appointment but there no update for this appointment data in backend (databse) that happend just when I use mobile but in desktop everything was done in both sides (frontend and backend), I asked Open AI Chatgpt and it gave me one suggestion for adding slash __/__ on end of request address.
+  - This image before adding slash to request address:
+  - ![bad request](/images-readme/error_http_request_url_without_slash.png)
+  - After debug ths request address:
+  - ![success request](/images-readme/fix_http_request_url_without_slash.png)
 ---
-- Bug History & Challenges:
-   - While working on the application, I encountered several bugs during development. Unfortunately, due to technical issues with my laptop, I was unable to save the records of those bugs. As a result, I had to restart the application from scratch, which was challenging but also provided valuable learning opportunities.
+- Input html tag missing autocomplete attribute:
+   - When I test this website by lighthouse test tool in google chrome web browser, there found warning that input html tag is missing to autocomplete attribute and for giving more secure to the website code lighthouse tool recommend me to add this attribute to this input element when the type is password.
+  - This image before adding autocomplete attribute to input html tag:
+  - ![missing attribute](/images-readme/error_input_html_tag_missing_autocomplete_attribute.jpg)
+  - After adding autocomplete attribute:
+  - ![attribute included](/images-readme/fix_input_html_tag_missing_autocomplete_attribute.jpg)
+---
+- Form html element does not have label element:
+   - When I test this website by lighthouse test tool in google chrome web browser, on the result of test there found warning that form tag has label with no for attribute and for attribute must has value likes to form's id and that is useful with search engines and SEO. Lighthouse tool ask me to add this attribute to label html element with appropriated value.
+  - Lighthouse warning message:
+  - ![form element with no label](/images-readme/form_has_no_label.jpg)
+---
+- New CSS propert not existing in interpreter:
+   - I used new css property that was text-box-trim but when I tested my css code by W3C css validator service there was error with this new property and tester cannot know it for that I deleted this property and change it with line-height property.
+  - ![new css property](/images-readme/text_box_trim_not_existing_in_legacy_css.jpg)
+---
+- Object variable cannot be passed as a data attribute in an html element:
+   - I needed pass javascript object by data attribute in an html element to get it in function but it was not allowed just can put variable type (number, boolean or string) in data attribute for that I asked chatgpt to give me solve for this problem and this AI model gave me a good suggestion this objict will convert it to string type then in function can return it to object type again by using JSON.stringify then JSON.parse.
+  - The image will explain this problem, you can see the problem with the red line:
+  - ![missing attribute](/images-readme/error_object_variable_not_pass_by_attribute.jpg)
+  - The problem is solved when JSON used for solving:
+  - ![attribute included](/images-readme/fix_object_variable_not_pass_by_attribute.jpg)
 ---
 ## Credits
 - I would like to extend my sincere appreciation to Code Institute for granting me extra time to complete this project. Their support and flexibility allowed me to refine my work and ensure I met all the necessary requirements. I am grateful for the opportunity to improve and successfully complete this milestone.
 - Inspiration_
   - The design and layout of the front-end were inspired by a similar website I came across  [- ( Snaps ) -](https://snaps-frontend-871b3764ee9c.herokuapp.com/). No code was copied; I only used it as a reference for the visual structure and user experience.
+- AI model that Open AI Chatgpt was used to solve some buges.

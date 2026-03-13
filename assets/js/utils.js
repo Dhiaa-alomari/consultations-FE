@@ -20,7 +20,7 @@ function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
 }
 
-// Hide mobile menu when clicking outside
+// Hide mobile menu when clicking outside it
 document.addEventListener('click', function(event) {
     const navMenu = document.getElementById('navMenu');
     const mobileBtn = document.querySelector('.mobile-btn');
